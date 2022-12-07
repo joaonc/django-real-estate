@@ -216,6 +216,7 @@ def precommit_run(c, hook=None):
     hook = hook or '--all-files'
     c.run(f'pre-commit run {hook}')
 
+
 @task
 def sys_alias(c):
     """
