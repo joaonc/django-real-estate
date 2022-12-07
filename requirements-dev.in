@@ -1,0 +1,23 @@
+-r requirements.txt
+
+# DB Migrations
+#alembic
+
+# Tools
+invoke
+pip-tools
+pre-commit
+
+# Linting
+bandit
+black
+flake8
+isort
+mypy
+safety
+
+# Test
+#factory_boy
+#faker
+#pytest
+#pytest-check
