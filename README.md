@@ -2,6 +2,21 @@
 Code developed throughout the Django course:  
 https://www.udemy.com/course/python-django-dev-to-deployment
 
+## Development
+Note: Best to work on a virtual environment.
+This page doesn't go into how to do that.
+
+Install the development packages:
+```
+python -m pip install -r dev-requirements.txt
+```
+
+This project uses [pyinvoke](https://www.pyinvoke.org/) to facilitate common tasks.
+For a list of tasks:
+```
+inv --list
+```
+
 ## Resources
 Here are the links to many of the resources we will use in this course including 2 of the author's
 custom Gists.
