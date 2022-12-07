@@ -217,6 +217,18 @@ def precommit_run(c, hook=None):
     c.run(f'pre-commit run {hook}')
 
 
+@task
+def sys_alias(c):
+    """
+    Alias to make life easier.
+    These should be added to a CLI init file.
+    """
+    if os.name == 'nt':  # Windows
+        c.run('doskey dm=python -m manage $*')
+    else:
+        print('Not yet implemented')
+
+
 ns = Collection()  # Main namespace
 ns.add_task(serve)
 ns.add_task(test)
@@ -248,8 +260,12 @@ precommit.add_task(precommit_run, 'run')
 precommit.add_task(precommit_install, 'install')
 precommit.add_task(precommit_upgrade, 'upgrade')
 
+system = Collection('sys')
+system.add_task(sys_alias, 'alias')
+
 ns.add_collection(db)
 ns.add_collection(docs)
 ns.add_collection(lint)
 ns.add_collection(pip)
 ns.add_collection(precommit)
+ns.add_collection(system)
