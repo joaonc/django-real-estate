@@ -1,4 +1,5 @@
 django
+Pillow
 
 # Postgres
 # psycopg2
