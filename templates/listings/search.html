@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <form action="search.html">
+          <form action="{% url 'search' %}">
             <!-- Form Row 1 -->
             <div class="form-row">
               <div class="col-md-4 mb-3">
@@ -125,11 +125,11 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">
+            <a href="{% url 'index' %}">
               <i class="fas fa-home"></i> Home</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="listings.html">Browse Listings</a>
+            <a href="{% url 'listings' %}">Browse Listings</a>
           </li>
           <li class="breadcrumb-item active"> Search Results</li>
         </ol>
@@ -186,7 +186,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
@@ -284,7 +284,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
@@ -333,7 +333,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
@@ -382,7 +382,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
@@ -431,7 +431,7 @@
                 </div>
               </div>
               <hr>
-              <a href="listing.html" class="btn btn-primary btn-block">More Info</a>
+              <a href="{% url 'listing' listing_id=1 %}" class="btn btn-primary btn-block">More Info</a>
             </div>
           </div>
         </div>
