@@ -1,8 +1,14 @@
 from django.shortcuts import render
 
+from .models import Listing
+
 
 def listings(request):
-    return render(request, 'listings/listings.html')
+    context = {
+        'listings': Listing.objects.all()
+    }
+
+    return render(request, 'listings/listings.html', context)
 
 
 def listing(request, listing_id: int):
