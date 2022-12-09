@@ -5,8 +5,8 @@ from .models import Listing
 
 
 def listings(request):
-    listings_ = Listing.objects.all()
-    paginator = Paginator(listings_, 2)
+    listings_ = Listing.objects.order_by('-list_date')
+    paginator = Paginator(listings_, 6)
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
 
