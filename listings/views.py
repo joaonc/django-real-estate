@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Listing
 
@@ -18,7 +18,13 @@ def listings(request):
 
 
 def listing(request, listing_id: int):
-    return render(request, 'listings/listing.html')
+    listing_ = get_object_or_404(Listing, pk=listing_id)
+
+    context = {
+        'listing': listing_,
+    }
+
+    return render(request, 'listings/listing.html', context)
 
 
 def search(request):
