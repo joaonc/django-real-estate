@@ -30,7 +30,11 @@ def listing(request, listing_id: int):
 
 
 def search(request):
+
+    listings_ = Listing.objects.all()
+
     context = {
+        'listings': listings_,
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
         'state_choices': state_choices,
