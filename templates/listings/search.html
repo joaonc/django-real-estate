@@ -37,16 +37,9 @@
                 <label class="sr-only">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
                   <option selected="selected" disabled="disabled">Bedrooms (Any)</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
+                  {% for k, v in bedroom_choices.items %}
+                    <option value="{{ k }}">{{ v }}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="col-md-6 mb-3">
