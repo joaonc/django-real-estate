@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import redirect, render
 
 
@@ -17,7 +18,7 @@ def logout(request):
 def register(request):
     if request.method == 'POST':
         # Register User
-        print('SUBMITTED REGISTRATION')
+        messages.error(request, 'Testing error message')
         return redirect('register')
 
     return render(request, 'accounts/register.html')
