@@ -12,9 +12,14 @@
                 <i class="fas fa-sign-in-alt"></i> Login</h4>
             </div>
             <div class="card-body">
+              <!-- Alerts -->
+              {% include 'partials/_alerts.html' %}
+
               <form action="{% url 'login' %}" method="POST">
+                <!-- CSRF token -->
                 {% csrf_token %}
 
+                <!-- Form fields -->
                 <div class="form-group">
                   <label for="username">Username</label>
                   <input type="text" name="username" class="form-control" required>
