@@ -5,14 +5,26 @@ from django.shortcuts import redirect, render
 
 def login(request):
     if request.method == 'POST':
-        # Login User
-        print('SUBMITTED LOGIN')
-        return redirect('login')
+        # Get form values
+        username = request.POST['username'].strip()
+        password = request.POST['password']
 
-    return render(request, 'accounts/login.html')
+        user = auth.authenticate(username=username, password=password)
+        if not user:
+            messages.error(request, 'Invalid username or password')
+            return redirect('login')
+
+        # Login User
+        auth.login(request, user)
+        return redirect('index')
+    else:
+        return render(request, 'accounts/login.html')
 
 
 def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are now logged out')
     return redirect('index')
 
 
