@@ -1,7 +1,8 @@
 from django.contrib import messages
+from django.core.mail import send_mail
 from django.shortcuts import redirect
 
-from contacts.models import Contact
+from .models import Contact
 
 
 def contact(request):
@@ -33,6 +34,15 @@ def contact(request):
             user_id=user_id,
         )
         contact_.save()
+
+        # Send email to realtor
+        # send_mail(
+        #     subject='Inquiry on listing ' + listing,
+        #     message=message,
+        #     from_email='<the_email@dmail.zom>',
+        #     recipient_list=[realtor_email],
+        #     fail_silently=False,
+        # )
 
         messages.success(
             request,
