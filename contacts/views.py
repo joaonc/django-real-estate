@@ -23,7 +23,7 @@ def contact(request):
             messages.error(request, 'You have already made an inquiry for this listing')
             return redirect('/listings/' + listing_id)
 
-        contact = Contact(
+        contact_ = Contact(
             listing=listing,
             listing_id=listing_id,
             name=name,
@@ -32,7 +32,7 @@ def contact(request):
             message=message,
             user_id=user_id,
         )
-        contact.save()
+        contact_.save()
 
         messages.success(
             request,
