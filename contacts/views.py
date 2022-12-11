@@ -15,6 +15,14 @@ def contact(request):
         user_id = request.POST['user_id']
         realtor_email = request.POST['realtor_email']
 
+        # Check if user has already made an inquiry
+        if (
+            int(user_id) > 0  # Could also use `request.user.id`
+            and Contact.objects.all().filter(listing_id=listing_id, user_id=user_id).exists()
+        ):
+            messages.error(request, 'You have already made an inquiry for this listing')
+            return redirect('/listings/' + listing_id)
+
         contact = Contact(
             listing=listing,
             listing_id=listing_id,
